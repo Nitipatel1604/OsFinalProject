@@ -261,4 +261,4 @@ A Kubernetes cluster called a Resource Pool pulls for complete processes known a
 
 1. Able to perform tasks in parallel without any waiting dependencies
 
-2. For more information visit the [wiki](https://github.com/Comcast/Priority-Operation-Processing/wiki).
+
