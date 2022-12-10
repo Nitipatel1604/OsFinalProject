@@ -46,7 +46,7 @@ Components
 *Step 1: Submission*
 -----------------
 Workflow (Agenda)
-POP's workflow data model is called an [Agenda](https://github.com/Comcast/Priority-Operation-Processing/wiki/AgendaAPI).
+POP's workflow data model is called an Agenda
 
 ### Features
 * A short selection of procedures 
