@@ -1,8 +1,6 @@
 Priority Operation Processing (POP)
 
-======================================
-How does Priority Operation Processing work? 
-——————————————————— 
+How does Priority Operation Processing work?
 
 * A framework for orchestrating workflows that schedules the workflow as a whole and gives resources priority once they are chosen 
 
