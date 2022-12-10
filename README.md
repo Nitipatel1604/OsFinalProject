@@ -66,11 +66,11 @@ As long as the dependency variables are satisfied, the Agenda Executor will carr
 
 *Step 2: Scheduling*
 ----------
-**Scheduling **
+*Scheduling *
 
 The Priority Operation Processing (POP) Brain is in charge of workflows for client callbacks, authentication, data submission (CRUD), data storage, and scheduling.
 
-**Features** 
+*Features* 
 
 1. Visibility of Authorized Customer Data 
 
@@ -99,7 +99,7 @@ The Priority Operation Processing (POP) Brain is in charge of workflows for clie
 
   - At the failure point, try again
  
-**Technologies** 
+*Technologies* 
 
 1. HTTP Gateway 
 
@@ -115,21 +115,21 @@ The Priority Operation Processing (POP) Brain is in charge of workflows for clie
 
 7. CloudWatch
 
-**Tying an agenda to a processing insight or queue **
+*Tying an agenda to a processing insight or queue *
 
 1. Based on a set of agenda insights and queue specifications, a ResourcePool (a Kubernetes farm that consumes work) will determine the kind of work it can take on. 
 
 2. Each Insight / Queue's pending task will be scheduled by Priority Operation Processing (POP). 
 
-**Pool of Resources **
+*Pool of Resources *
 
 A puller to gather resources and labour to process (typically a Kubernetes farm) 
 
-**Insight: **
+*Insight: *
 
 A description of the work type in the queue 
 
-**Scheduling procedures:**
+*Scheduling procedures:*
 
 1. Assemble the following clients waiting in line with work for each Resource Pool's insight. 
 
@@ -137,9 +137,9 @@ A description of the work type in the queue
 
 3. Keep an eye out for job fatigue and the refill line
 
-**How does it function? **
+*How does it function? *
 
-**Updating the agenda (customer) **
+*Updating the agenda (customer) *
 
 1. A ready-to-run Agenda or a payload with an AgendaTemplate.id is sent by the customer. 
 
@@ -149,7 +149,7 @@ A description of the work type in the queue
 
 4. The Agenda is seen as available and unoccupied. 
 
-**Scheduling (background processing)** 
+*Scheduling (background processing)*
 
 1. Queues are watched for low or empty item counts. 
 
@@ -161,7 +161,7 @@ A description of the work type in the queue
 
 5. The Ready Agenda items are moved to the queue. 
 
-**Obtaining the accessible agendas (puller) **
+*Obtaining the accessible agendas (puller) *
 
 1. Puller requests insightId work 
 
@@ -172,19 +172,19 @@ A description of the work type in the queue
 
 Processing of Operation with Priority: ResourcePool API 
 
-**Overview **
+*Overview *
 
 A Kubernetes cluster called a Resource Pool pulls for complete processes known as Agendas. One or more queues that a Resource Pool draws from are filtered by insights.
 
-**Features **
+*Features *
 
-**Agenda Puller** 
+*Agenda Puller* 
 
 1. The puller is a Kubernetes pod that runs and uses the Agenda Service to pull for work. getAgenda 
 
 2. The creation of an on-demand Kubernetes pod for agenda execution 
 
-**Agenda Executor **
+*Agenda Executor *
 
 1. Executes all operations in the agenda by dynamically spinning up resources. 
 
@@ -196,7 +196,7 @@ A Kubernetes cluster called a Resource Pool pulls for complete processes known a
 
 5. Processing of Node Graph / DAG models 
 
-**Handler **
+*Handler *
 
 1. One-time Agenda Operation Executor 
 
@@ -206,7 +206,7 @@ A Kubernetes cluster called a Resource Pool pulls for complete processes known a
 
 4. Progress updates 
 
-**Technologies **
+*Technologies *
 
 1. Kubernetes 
 
@@ -218,9 +218,9 @@ A Kubernetes cluster called a Resource Pool pulls for complete processes known a
 
 5. Graphite
 
-**Technical Solutions**
+*Technical Solutions*
 
-**Scheduling **
+*Scheduling *
 
 1. Supports several work queue scheduling techniques (FIFO, Fairness, Priority) 
 
@@ -230,7 +230,7 @@ A Kubernetes cluster called a Resource Pool pulls for complete processes known a
 
 4. Queue sizes can be changed. 
 
-**Support for new technologies that plugs in **
+*Support for new technologies that plugs in *
 
 1. Pods are spun up dynamically using Docker images. 
 
@@ -242,7 +242,7 @@ A Kubernetes cluster called a Resource Pool pulls for complete processes known a
 
 5. Simple Handler configuration for Docker images 
 
-**Bare-metal, Cloud, and Scalability **
+*Bare-metal, Cloud, and Scalability *
 
 1. Kubernetes 
 
@@ -250,13 +250,13 @@ A Kubernetes cluster called a Resource Pool pulls for complete processes known a
 
 3. Handlers are dynamically spun up, and they manage dependent Pods' CPU needs.
 
-**Multiple facilities for content processing  **
+*Multiple facilities for content processing  *
 
 1. Support for firewall-protected facilities using their own Kubernetes cluster to process content 
 
 2. Customers who desire segregated resources within the same cluster can use namespace segregation. 
 
-**Concurrent processing **
+*Concurrent processing *
 
 1. Able to perform tasks in parallel without any waiting dependencies
 
